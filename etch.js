@@ -1,23 +1,32 @@
 const sketch = document.getElementById('sketch');
 
-const sketchBoard = () => {
+const sketchBoard = (n) => {
     const newDiv = document.createElement('div'); 
     newDiv.id = "board"; 
 
-    for(let i=0; i<16; i++){
-        const a = document.createElement('div');
-        a.className = "a";
+    for(let i=0; i<n; i++){
+        const col = document.createElement('div');
+        col.className = "col";
 
-        for(let j=0; j<16; j++){
-            const b = document.createElement('div');
-            b.className = "b";
+        for(let j=0; j<n; j++){
+            const tile = document.createElement('div');
+            tile.className = "tile";
+            tile.style.padding = `${360/n}px`;
 
-            a.appendChild(b);
+            col.appendChild(tile);
         }
-        newDiv.appendChild(a);
+        newDiv.appendChild(col);
     }
 
     sketch.appendChild(newDiv);
+
+    const hover = document.querySelectorAll('.tile');
+
+    hover.forEach(h =>  {
+        h.addEventListener('mouseover', () => {
+            h.style.backgroundColor = "black";
+    })
+})
 }
 
-sketchBoard();
+sketchBoard(16);

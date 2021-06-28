@@ -1,14 +1,17 @@
+body {
+    background-color: gainsboro;
+}
+
 h1, h3 {
     text-align: center;
 }
 
 #board {
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
 }
 
-.b {
-    border: 1px solid black;
-    padding: 20px;
+.tile {
+    border: 1px solid gray;
 }

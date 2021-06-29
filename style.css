@@ -6,7 +6,24 @@ h1, h3 {
     text-align: center;
 }
 
-#sketch {
+#create {
+    margin: 25px;
+}
+
+#button {
+    padding: 20px;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#button:hover {
+    color: white;
+    background-color: gray;
+    cursor: pointer;
+}
+
+#sketch, #create {
     display:flex;
     justify-content: center;
     align-items: center;
@@ -14,5 +31,4 @@ h1, h3 {
 
 .tile {
     border: 1px solid gray;
-    padding: 20px;
 }

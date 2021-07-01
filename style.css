@@ -23,7 +23,7 @@ h1, h3 {
     cursor: pointer;
 }
 
-#sketch, #create {
+#board, #create {
     display:flex;
     justify-content: center;
     align-items: center;

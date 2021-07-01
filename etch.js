@@ -2,6 +2,9 @@ const button = document.getElementById('button');
 const sketch = document.getElementById('sketch');
 
 const sketchBoard = (n) => {
+    const board = document.createElement('div');
+    board.id = "board";
+
     for(let i=0; i<n; i++){
         const col = document.createElement('div');
         col.className = "col";
@@ -9,12 +12,14 @@ const sketchBoard = (n) => {
         for(let j=0; j<n; j++){
             const tile = document.createElement('div');
             tile.className = "tile";
-            tile.style.padding = `${1080/(n * 4)}px`;
+            tile.style.padding = `${(500)/(n * 2)}px`;
 
             col.appendChild(tile);
         }
-        sketch.appendChild(col);
+        board.appendChild(col);
     }
+
+    sketch.appendChild(board);
 
     const hover = document.querySelectorAll('.tile');
 
@@ -27,6 +32,12 @@ const sketchBoard = (n) => {
 
 sketchBoard(16);
 
+const clearBoard = () => {
+    const board = document.getElementById('board');
+    board.remove();
+}
+
 button.addEventListener('click', () => {
-    console.log('click');
+    clearBoard();
+    sketchBoard(window.prompt('Grid Size', 16));
 })

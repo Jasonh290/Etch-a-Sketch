@@ -39,5 +39,12 @@ const clearBoard = () => {
 
 button.addEventListener('click', () => {
     clearBoard();
-    sketchBoard(window.prompt('Grid Size', 16));
+    let promptGrid = window.prompt('Grid Size?', 16);
+
+    if(promptGrid > 64) {
+        alert('ERROR! Grid Size too large!');
+        sketchBoard(0);
+    } else {
+        sketchBoard(promptGrid);
+    }
 })
